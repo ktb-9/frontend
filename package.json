@@ -73,7 +73,8 @@
     "text-encoding": "^0.7.0",
     "webstomp-client": "^1.2.6",
     "whatwg-fetch": "^3.6.20",
-    "ws": "^8.18.0"
+    "ws": "^8.18.0",
+    "expo-apple-authentication": "~7.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

@@ -15,7 +15,14 @@
       "distribution": "internal"
     },
     "production": {
-      "autoIncrement": true
+      "autoIncrement": true,
+      "env": {
+        "EXPO_PUBLIC_BASE_URL": "http://healthkungya.s3-website.ap-northeast-2.amazonaws.com",
+        "EXPO_PUBLIC_REDIRECT_URI": "http://healthkungya.s3-website.ap-northeast-2.amazonaws.com/oauth/kakao/callback",
+        "EXPO_PUBLIC_AXIOS_BASE_URL": "https://server.zero-dang.com",
+        "EXPO_PUBLIC_WEB": "https://client.zero-dang.com",
+        "EXPO_PUBLIC_MAP_KEY": "38789b5f2f2e16d6229dbc25dc0c776b"
+      }
     }
   },
   "submit": {

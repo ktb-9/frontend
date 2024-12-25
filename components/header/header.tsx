@@ -8,12 +8,13 @@ import { useRecoilValue } from "recoil";
 import authState from "@/recoil/authState";
 import Button from "../common/Button/button";
 import List from "./List/List";
+import { defaults } from "@/constants/default";
 const Header = ({ toggle, isDark }: header) => {
   const userValue = useRecoilValue(authState);
   const { mutate } = addGroupMutation();
   const [modalVisible, setModalVisible] = useState(false);
   const router = useRouter();
-  const profileImageUrl = userValue?.profileImage.replace(
+  const profileImageUrl = userValue?.profileImage?.replace(
     "http://",
     "https://"
   );
@@ -25,9 +26,9 @@ const Header = ({ toggle, isDark }: header) => {
   };
   return (
     <View style={styles.header}>
-      <TouchableOpacity style={styles.profile}>
+      <View style={styles.profile}>
         <Image
-          source={{ uri: profileImageUrl }}
+          source={{ uri: profileImageUrl || defaults.gt }}
           style={{ width: 40, height: 40, borderRadius: 20 }}
           onError={() => console.log("Failed to load image")}
         />
@@ -41,7 +42,7 @@ const Header = ({ toggle, isDark }: header) => {
         >
           {userValue?.nickname}
         </Text>
-      </TouchableOpacity>
+      </View>
       <View style={styles.menu}>
         <>
           <Button
@@ -75,15 +76,6 @@ const Header = ({ toggle, isDark }: header) => {
           variant="icon"
           icon={{ name: "calendar", size: 24 }}
           onPress={createSchedule}
-        />
-        <Button
-          variant="icon"
-          icon={{
-            name: isDark ? "sunny" : "moon",
-            size: 24,
-            color: isDark ? "#FFF" : "#000",
-          }}
-          onPress={toggle}
         />
       </View>
     </View>

@@ -23,4 +23,5 @@ export type HotplaceState = {
   image: any;
   mainDescription: string;
   subDescription: string;
+  url: string;
 };

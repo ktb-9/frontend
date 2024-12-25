@@ -12,6 +12,7 @@ import * as Clipboard from "expo-clipboard";
 import { useState } from "react";
 import Toast from "../../common/Toast/Toast";
 import { useLocalSearchParams } from "expo-router";
+import { defaults } from "@/constants/default";
 type Params = {
   id: string;
 };
@@ -48,7 +49,9 @@ const Invite = () => {
                 <Image
                   style={styles.profile}
                   source={{
-                    uri: value.profileImage.replace("http://", "https://"),
+                    uri:
+                      value.profileImage?.replace("http://", "https://") ||
+                      defaults.gt,
                   }}
                 />
                 <Text style={styles.name}>{value.nickname}</Text>

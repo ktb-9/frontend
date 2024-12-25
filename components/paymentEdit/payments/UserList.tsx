@@ -17,6 +17,7 @@ import {
 import getPaymentMembersQuery from "@/hooks/api/getPaymentMembersQuery";
 import { useRecoilValue } from "recoil";
 import tripIdState from "@/recoil/tripIdState";
+import { defaults } from "@/constants/default";
 
 const UserList: React.FC<UserListProps> = ({
   value,
@@ -42,7 +43,9 @@ const UserList: React.FC<UserListProps> = ({
               <Image
                 style={styles.userAvatar}
                 source={{
-                  uri: user.profile_image.replace("http://", "https://"),
+                  uri:
+                    user.profile_image?.replace("http://", "https://") ||
+                    defaults.gt,
                 }}
               />
               <Text style={styles.userName}>

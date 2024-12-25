@@ -45,14 +45,6 @@ const Header = () => {
       Alert.alert("연결 오류", "서버 연결에 실패했습니다.");
     });
 
-    newSocket.on("disconnect", (reason) => {
-      console.log("Socket disconnected:", reason);
-      newSocket.emit("leaveGroup", {
-        groupId: parseInt(decodedId),
-        userId: userValue.id,
-      });
-    });
-
     // Event handlers
     newSocket.on("membersList", (data) => {
       const currentUser = data.members.find(

@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
     top: "80%",
     width: "100%",
     paddingHorizontal: 40,
+    gap: 12, // 버튼 사이 간격 추가
   },
 
   kakaoButton: {
@@ -54,14 +55,39 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
 
-  kakaoImage: {
-    width: 24,
-    height: 24,
-    marginRight: 8,
+  appleButton: {
+    backgroundColor: "#000000",
+    borderRadius: 12,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
 
   kakaoText: {
     color: "#000000",
+    fontSize: 16,
+    fontWeight: "600",
+  },
+  absoluteFill: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+  },
+
+  appleText: {
+    color: "#ffffff",
     fontSize: 16,
     fontWeight: "600",
   },
@@ -70,6 +96,12 @@ const styles = StyleSheet.create({
     color: "#ff3b30",
     marginTop: 8,
     textAlign: "center",
+  },
+
+  loadingOverlay: {
+    backgroundColor: "rgba(255, 255, 255, 0.8)",
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
 

@@ -1,13 +1,13 @@
 const useDday = (date?: string) => {
   // date가 없거나 유효하지 않은 경우 기본값 반환
   if (!date) {
-    return "날짜 정보 없음";
+    return "정보 없음";
   }
 
   try {
     const day = date.split("~").shift();
     if (!day) {
-      return "날짜 정보 없음";
+      return "정보 없음";
     }
 
     const currentDate = new Date();

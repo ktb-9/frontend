@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "travelgraphy",
+    "name": "rippletrip",
     "slug": "travelgraphy",
-    "version": "1.0.0",
+    "version": "1.0.4",
     "orientation": "portrait",
     "icon": "./assets/images/logo.png",
-    "scheme": "myapp",
+    "scheme": "rippletrip",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/logo.png",
@@ -13,14 +13,30 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
+      "usesAppleSignIn": true,
       "supportsTablet": true,
-      "bundleIdentifier": "com.tkrhdrhkdduf.travelgraphy"
+      "bundleIdentifier": "com.tkrhdrhkdduf.travelgraphy",
+      "entitlements": {
+        "aps-environment": "development"
+      },
+      "infoPlist": {
+        "NSCameraUsageDescription": "여행 사진 편집을 하고 기록을 위해 카메라 접근 권한이 필요합니다.",
+        "NSAppTransportSecurity": {
+          "NSAllowsArbitraryLoads": true,
+          "NSExceptionDomains": {
+            "healthkungya.s3-website.ap-northeast-2.amazonaws.com": {
+              "NSTemporaryExceptionAllowsInsecureHTTPLoads": true
+            }
+          }
+        }
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.tkrhdrhkdduf.travelgraphy"
     },
     "web": {
       "bundler": "metro",

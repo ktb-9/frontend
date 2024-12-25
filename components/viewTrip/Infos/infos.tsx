@@ -90,8 +90,10 @@ const Infos = () => {
                     <Image
                       source={{
                         uri:
-                          member.profile_image.replace("http://", "https://") ||
-                          defaults.gt,
+                          member.profile_image?.replace(
+                            "http://",
+                            "https://"
+                          ) || defaults.gt,
                       }}
                       style={styles.memberProfileImage}
                     />
